@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbitmq
+spec:
+  selector:
+    matchLabels:
+      app: rabbitmq
+  template:
+    metadata:
+      labels:
+        app: rabbitmq
+    spec:
+      containers:
+        - name: rabbitmq
+          image: rabbitmq:management-alpine
+          resources:
+            limits:
+              memory: "1024Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 4369
+            - containerPort: 5671
+            - containerPort: 5672
+            - containerPort: 15671
+            - containerPort: 15672
+            - containerPort: 15691
+            - containerPort: 15692
+            - containerPort: 25672
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq-service
+spec:
+  selector:
+    app: rabbitmq
+  type: LoadBalancer
+  ports:
+    - name: "4369"
+      port: 4369
+      targetPort: 4369
+      nodePort: 30001
+    - name: "5671"
+      port: 5671
+      targetPort: 5671
+      nodePort: 30002
+    - name: "5672"
+      port: 5672
+      targetPort: 5672
+      nodePort: 30003
+    - name: "15671"
+      port: 15671
+      targetPort: 15671
+      nodePort: 30004
+    - name: "15672"
+      port: 15672
+      targetPort: 15672
+      nodePort: 30005
+    - name: "15691"
+      port: 15691
+      targetPort: 15691
+      nodePort: 30006
+    - name: "15692"
+      port: 15692
+      targetPort: 15692
+      nodePort: 30007
+    - name: "25672"
+      port: 25672
+      targetPort: 25672
+      nodePort: 30008

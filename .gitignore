@@ -1,0 +1,4 @@
+*secret.yaml
+tls_generate/
+kubeconfig
+program/
