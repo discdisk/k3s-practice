@@ -1,4 +1,6 @@
 *secret.yaml
 tls_generate/
 kubeconfig
-program/
+__pycache__
+.vscode
+.devcontainer
