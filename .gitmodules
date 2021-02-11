@@ -1,0 +1,6 @@
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/discdisk/angular_test.git
+[submodule "backend"]
+	path = backend
+	url = https://github.com/discdisk/fast_api_test.git
