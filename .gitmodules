@@ -1,3 +1,9 @@
 [submodule "backend"]
 	path = backend
 	url = https://github.com/discdisk/fast_api_test.git
+[submodule "frontend/angular_test"]
+	path = frontend/angular_test
+	url = https://github.com/discdisk/angular_test.git
+[submodule "frontend/vue3-test"]
+	path = frontend/vue3-test
+	url = https://github.com/discdisk/vue3-test.git
